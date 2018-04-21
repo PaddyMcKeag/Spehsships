@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour {
 	public float movementSpeed;
 	public float rotationSpeed;
 
+	public GameObject mainEngine;
+	public GameObject reverseEngines;
+	public GameObject clockwiseEngines;
+	public GameObject antiClockwiseEngines;
+
+
 	private Rigidbody2D player;
 
 	// Use this for initialization
@@ -26,22 +32,43 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void applyPlayerRotation(){
-		float playerRotation = calculateHorizontalRotation();
-		player.AddTorque(playerRotation);
+		float playerRotationalForce = calculateRotationalForce();
+		player.AddTorque(playerRotationalForce);
 	}
 
 	/* 
-		Calculates the horizontal rotation of the player. Note that this flips the horizontal input so 
+		Calculates the rotational force of the player. Note that this flips the horizontal input so 
 	  	that the player is rotated based on the key that they press, as Unity uses the "Left-Hand Coordinate System".
 	*/
-	private float calculateHorizontalRotation(){
-		return -Input.GetAxis("Horizontal") * rotationSpeed;
+	private float calculateRotationalForce(){
+		float rotationalForce = -Input.GetAxis("Horizontal") * rotationSpeed;
+		if (rotationalForce < 0) {
+			clockwiseEngines.SetActive (true);
+			antiClockwiseEngines.SetActive (false);
+		} else if (rotationalForce > 0) {
+			clockwiseEngines.SetActive (false);
+			antiClockwiseEngines.SetActive (true);
+		} else {
+			clockwiseEngines.SetActive (false);
+			antiClockwiseEngines.SetActive (false);
+		}
+		return rotationalForce;
 	}
 
 	private void applyPlayerMovement(){
-		float verticalMovement = Input.GetAxis("Vertical");
-		Vector2 playerMovement = new Vector2(0, verticalMovement);
-		player.AddRelativeForce(playerMovement * movementSpeed);
+		float verticalForce = Input.GetAxis("Vertical");
+		if (verticalForce > 0) {
+			mainEngine.SetActive (true);
+			reverseEngines.SetActive (false);
+		} else if (verticalForce < 0) {
+			mainEngine.SetActive (false);
+			reverseEngines.SetActive (true);
+		} else {
+			mainEngine.SetActive (false);
+			reverseEngines.SetActive (false);
+		}
+		Vector2 playerForce = new Vector2(0, verticalForce);
+		player.AddRelativeForce(playerForce * movementSpeed);
 	}
 	
 }
