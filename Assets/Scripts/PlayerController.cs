@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour {
 	*/
 	private float calculateRotationalForce(){
 		float rotationalForce = -Input.GetAxis("Horizontal") * rotationSpeed;
+		showRotationalEngines(rotationalForce);
+		return rotationalForce;
+	}
+
+	private void showRotationalEngines(float rotationalForce){
 		if (rotationalForce < 0) {
 			clockwiseEngines.SetActive (true);
 			antiClockwiseEngines.SetActive (false);
@@ -52,11 +57,9 @@ public class PlayerController : MonoBehaviour {
 			clockwiseEngines.SetActive (false);
 			antiClockwiseEngines.SetActive (false);
 		}
-		return rotationalForce;
 	}
 
-	private void applyPlayerMovement(){
-		float verticalForce = Input.GetAxis("Vertical");
+	private void showLinearEngines(float verticalForce){
 		if (verticalForce > 0) {
 			mainEngine.SetActive (true);
 			reverseEngines.SetActive (false);
@@ -67,6 +70,11 @@ public class PlayerController : MonoBehaviour {
 			mainEngine.SetActive (false);
 			reverseEngines.SetActive (false);
 		}
+	}
+
+	private void applyPlayerMovement(){
+		float verticalForce = Input.GetAxis("Vertical");
+		showLinearEngines(verticalForce);
 		Vector2 playerForce = new Vector2(0, verticalForce);
 		player.AddRelativeForce(playerForce * movementSpeed);
 	}
