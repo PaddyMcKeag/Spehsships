@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void applyPlayerRotation(){
 		float playerRotationalForce = calculateRotationalForce();
+		showRotationalEngines(playerRotationalForce);
 		player.AddTorque(playerRotationalForce);
 	}
 
@@ -42,7 +43,6 @@ public class PlayerController : MonoBehaviour {
 	*/
 	private float calculateRotationalForce(){
 		float rotationalForce = -Input.GetAxis("Horizontal") * rotationSpeed;
-		showRotationalEngines(rotationalForce);
 		return rotationalForce;
 	}
 
