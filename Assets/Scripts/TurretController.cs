@@ -19,11 +19,11 @@ public class TurretController : MonoBehaviour {
 	}
 
 	void aimTurrets () {
-		float rotationZ = getAimAngle ();
+		float rotationZ = calculateAimAngle ();
 		transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + turretSpriteOffset);
 	}
 
-	float getAimAngle (){
+	float calculateAimAngle (){
 		/*Gets the rotation for the turrets to aim, we dont actually want the turrets to aim at the mouse, we want them to aim along a line
 		parallel with the line between the centre of the ship and the mouse, so that the bullets all fire parallel, so we take the parent ship
 		position to compare with the mouse position, we then normalise so that our rotation vector is simply a direction with no magnitude */
