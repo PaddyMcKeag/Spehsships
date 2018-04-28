@@ -15,21 +15,23 @@ public class TurretController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		aimTurrets ();
+		aimTurret ();
 	}
 
-	void aimTurrets () {
+	void aimTurret () {
 		float rotationZ = calculateAimAngle ();
 		transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + turretSpriteOffset);
 	}
 
+	/*
+		Calculates the rotation for the turret's aim. 
+		The turret should aim along a line parallel with the line between the centre of the ship and the mouse, rather than at the actual mouse; this allows the bullets of all of the ships turrets to be fired in parallel with each other.
+		This method takes the parent ship's position, compares it with the mouse position and normalises it so that the rotation vector is simply a direction with no magnitude.
+		The vector is converted into an angle to allow a rotation in degrees.
+	*/
 	float calculateAimAngle (){
-		/*Gets the rotation for the turrets to aim, we dont actually want the turrets to aim at the mouse, we want them to aim along a line
-		parallel with the line between the centre of the ship and the mouse, so that the bullets all fire parallel, so we take the parent ship
-		position to compare with the mouse position, we then normalise so that our rotation vector is simply a direction with no magnitude */
 		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - ship.transform.position;
 		difference.Normalize();
-		//turn our direction vector into an angle to rotate in degrees
 		return Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 	}
 }
