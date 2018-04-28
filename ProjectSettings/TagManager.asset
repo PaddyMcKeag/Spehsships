@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
+  - Ship Hulls
   - 
+  - Turrets
   - 
-  - 
-  - 
-  - 
+  - Engines
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ships
+    uniqueID: 500846765
+    locked: 0
+  - name: Turrets
+    uniqueID: 3669149327
     locked: 0
