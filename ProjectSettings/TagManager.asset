@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - Ship Hulls
+  - 'Player '
+  - Enemies
+  - Bullets
+  - Enemy Bullets
   - 
-  - Turrets
-  - 
-  - Engines
   - 
   - 
   - 

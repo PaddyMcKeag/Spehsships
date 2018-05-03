@@ -7,6 +7,10 @@ public class TurretController : MonoBehaviour {
 	public float turretSpriteOffset = -90.0f;
 	//the parent ship of this turret
 	public GameObject ship;
+	//premade bullet prefab ready to spawn
+	public GameObject bulletPrefab;
+	//location for bullet spawn, public so we can adjust for different turrets
+	public Transform bulletSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +20,10 @@ public class TurretController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		aimTurret ();
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			fireTurret();
+		}
 	}
 
 	void aimTurret () {
@@ -33,5 +41,20 @@ public class TurretController : MonoBehaviour {
 		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - ship.transform.position;
 		difference.Normalize();
 		return Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+	}
+
+	void fireTurret()
+	{
+		// Create the Bullet from the Bullet Prefab
+		var bullet = (GameObject)Instantiate (
+			bulletPrefab,
+			bulletSpawn.position, 
+			bulletSpawn.rotation);
+
+		// Add velocity to the bullet
+		bullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, 100));
+
+		// Destroy the bullet after 4 seconds
+		Destroy(bullet, 4.0f);
 	}
 }
