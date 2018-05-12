@@ -186,6 +186,11 @@ Prefab:
       propertyPath: bulletLifetime
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletVelocity
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
   m_IsPrefabParent: 0
@@ -261,6 +266,11 @@ Prefab:
         type: 2}
       propertyPath: bulletLifetime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletVelocity
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
@@ -407,6 +417,11 @@ Prefab:
       propertyPath: bulletLifetime
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletVelocity
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
   m_IsPrefabParent: 0
@@ -521,7 +536,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -680,6 +695,11 @@ Prefab:
         type: 2}
       propertyPath: bulletLifetime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletVelocity
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
