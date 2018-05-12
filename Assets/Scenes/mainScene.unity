@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4394429639516820, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
         type: 2}
@@ -171,6 +171,11 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 425145254}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
   m_IsPrefabParent: 0
@@ -211,7 +216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4394429639516820, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
         type: 2}
@@ -232,6 +237,11 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 1580886676}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
   m_IsPrefabParent: 0
@@ -244,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270199588}
   - component: {fileID: 270199589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test_Hull_2_FWD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,6 +372,11 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 662985390}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
   m_IsPrefabParent: 0
@@ -494,7 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564801141}
   - component: {fileID: 564801142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test_Hull_2_Anticlockwise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +615,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4394429639516820, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
         type: 2}
@@ -621,6 +636,11 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114813808894068372, guid: 0afd8c4a2a979f14fb67d4ce02a69bad,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 507761285}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0afd8c4a2a979f14fb67d4ce02a69bad, type: 2}
   m_IsPrefabParent: 0
@@ -730,7 +750,7 @@ GameObject:
   - component: {fileID: 1228283670}
   - component: {fileID: 1228283669}
   - component: {fileID: 1228283671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test_Hull_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322336823}
   - component: {fileID: 1322336824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test_Hull_2_BWD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132829603}
   - component: {fileID: 2132829604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test_Hull_2_Clockwise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
