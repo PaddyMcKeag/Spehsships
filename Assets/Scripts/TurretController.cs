@@ -20,7 +20,7 @@ public class TurretController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		aimTurret ();
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetMouseButtonDown(0))
 		{
 			fireTurret();
 		}
