@@ -20,8 +20,7 @@ public class TurretController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		aimTurret ();
-		if (Input.GetMouseButtonDown(0))
-		{
+		if (Input.GetMouseButtonDown(0)){
 			fireTurret();
 		}
 	}
@@ -43,8 +42,7 @@ public class TurretController : MonoBehaviour {
 		return Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 	}
 
-	void fireTurret()
-	{
+	void fireTurret(){
 		// Create the Bullet from the Bullet Prefab
 		var bullet = (GameObject)Instantiate (
 			bulletPrefab,
