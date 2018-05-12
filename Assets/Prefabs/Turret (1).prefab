@@ -56,7 +56,8 @@ MonoBehaviour:
   ship: {fileID: 0}
   bulletPrefab: {fileID: 1748640907102280, guid: 7334548cf0e207d4997a0d7074b8296b,
     type: 2}
-  bulletSpawn: {fileID: 0}
+  bulletVelocity: 100
+  fireRate: 1
 --- !u!212 &212923142772273146
 SpriteRenderer:
   m_ObjectHideFlags: 1
