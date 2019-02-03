@@ -13,7 +13,6 @@ public class TurretController : MonoBehaviour {
 	//premade bullet prefab ready to spawn
 	public GameObject bulletPrefab;
 
-
 	//initial force applied to bullets of mass 1
 	public float bulletVelocity;
 
@@ -28,12 +27,14 @@ public class TurretController : MonoBehaviour {
 	//variable used to store the time when the next shot is allowed
 	private float nextFire = 0.0F;
 
-	//location for bullet spawn, public so we can adjust for different turrets
-	private Transform bulletSpawn;
+	//to work out if a computer is controlling this
+	public bool isEnemy;
+
+	//for enemy turret targeting 
+	public GameObject target;
 
 	// Use this for initialization
 	void Start () {
-		bulletSpawn = this.transform;
 	}
 	
 	// Update is called once per frame
@@ -45,9 +46,11 @@ public class TurretController : MonoBehaviour {
 		aimTurret (aimAngle);
 
 		//fire
-		if (Input.GetMouseButtonDown(0) && Time.time > nextFire){
-			nextFire = Time.time + fireRate;
-			fireTurret(aimAngle);
+		if (Time.time > nextFire){
+			if (Input.GetMouseButtonDown(0) || this.isEnemy){
+				nextFire = Time.time + fireRate;
+				fireTurret(aimAngle);
+			}
 		}
 	}
 
@@ -63,17 +66,22 @@ public class TurretController : MonoBehaviour {
 		The vector is converted into an angle to allow a rotation in degrees.
 	*/
 	Vector3 calculateAimAngle (){
+		if (this.isEnemy){return calculateEnemyAimAngle();}
 		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - ship.transform.position;
 		difference.Normalize();
 		return difference;
+	}
+
+	Vector3 calculateEnemyAimAngle(){
+		return target.transform.position - ship.transform.position;
 	}
 
 	void fireTurret(Vector3 aimAngle){
 		// Create the Bullet from the Bullet Prefab
 		var bullet = (GameObject)Instantiate (
 			bulletPrefab,
-			bulletSpawn.position + aimAngle*barrelLength, 
-			bulletSpawn.rotation);
+			this.transform.position + aimAngle*barrelLength, 
+			this.transform.rotation);
 
 		// Add initial velocity to the bullet
 		bullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, bulletVelocity));
