@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float movementSpeed;
+	public float enginePower;
+	public float maxVelocity;
 	public float rotationSpeed;
 
 	public GameObject mainEngine;
@@ -76,7 +77,8 @@ public class PlayerController : MonoBehaviour {
 		float verticalForce = Input.GetAxis("Vertical");
 		showLinearEngines(verticalForce);
 		Vector2 playerForce = new Vector2(0, verticalForce);
-		player.AddRelativeForce(playerForce * movementSpeed);
+		player.AddRelativeForce(playerForce * enginePower);
+		player.velocity = Vector2.ClampMagnitude(player.velocity, maxVelocity);
 	}
 	
 }
